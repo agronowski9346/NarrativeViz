@@ -1,7 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import * as d3 from "d3";
 
 function App() {
+  useEffect(() => {
+    let makeGraph = async () => {
+      let data = await d3.csv("heart_2020_cleaned.csv");
+      console.log(data);
+    };
+
+    makeGraph();
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
